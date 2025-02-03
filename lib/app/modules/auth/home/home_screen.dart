@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:adstacks/app/modules/auth/home/sidebar_menu.dart';
 import 'package:adstacks/app/modules/auth/home/project_card.dart';
-import 'package:adstacks/app/modules/auth/home/creator_card.dart'; // Assuming you have a CreatorCard widget
-import 'package:adstacks/app/modules/auth/home/overall_performance.dart'; // Assuming you have a CreatorCard widget
+import 'package:adstacks/app/modules/auth/home/creator_card.dart';
+import 'package:adstacks/app/modules/auth/home/overall_performance.dart';
 
 class HomeScreen extends StatelessWidget {
   final List<Map<String, dynamic>> projects = [
@@ -21,10 +21,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200], // Custom background color for home
+      backgroundColor: Colors.grey[200],
       appBar: AppBar(
         title: Text("Home"),
-        backgroundColor: Colors.deepPurple, // App bar color
+        backgroundColor: Colors.deepPurple,
       ),
       drawer: SidebarMenu(),
       body: SingleChildScrollView(
@@ -32,7 +32,6 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // All Projects Section
             Text(
               "All Projects",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -52,9 +51,8 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(height: 20), // Space between sections
+            SizedBox(height: 20),
 
-            // Top Creators Section
             Text(
               "Top Creators",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -89,10 +87,9 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   Divider(height: 8),
-                  // ListView.builder without Expanded
                   ListView.builder(
-                    shrinkWrap: true, // Allow the list to shrink to its content size
-                    physics: NeverScrollableScrollPhysics(), // Prevent scrolling inside the list
+                    shrinkWrap: true, 
+                    physics: NeverScrollableScrollPhysics(), 
                     itemCount: topCreators.length,
                     itemBuilder: (context, index) {
                       return CreatorCard(
@@ -105,12 +102,11 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20), // Space before Overall Performance
+            SizedBox(height: 20),
             OverallPerformance(),
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                // Navigate to General Screen
                 context.go('/general');
               },
               child: Text("Go to General Screen"),
