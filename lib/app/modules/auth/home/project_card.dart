@@ -14,7 +14,7 @@ class ProjectCard extends StatelessWidget {
       height: 180,
       margin: EdgeInsets.only(right: 12),
       decoration: BoxDecoration(
-        color: backgroundColor, // Custom background color for each project
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
