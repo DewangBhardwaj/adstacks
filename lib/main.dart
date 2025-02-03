@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:adstacks/app/modules/auth/home/home_screen.dart';  // Make sure to import the general screen
-import 'package:adstacks/app/modules/auth/home/general_screen.dart';  // Import the home screen
+import 'package:adstacks/app/modules/auth/home/home_screen.dart';
+import 'package:adstacks/app/modules/auth/home/general_screen.dart';
 
 
 void main() {
@@ -17,14 +17,12 @@ class MyApp extends StatelessWidget {
   }
 
   final GoRouter _router = GoRouter(
-    initialLocation: '/home', // Set initial route
+    initialLocation: '/home',
     routes: [
-      // Define home screen route
       GoRoute(
         path: '/home',
         builder: (context, state) => HomeScreen(),
       ),
-      // Define general screen route
       GoRoute(
         path: '/general',
         builder: (context, state) => GeneralScreen(),
@@ -32,29 +30,3 @@ class MyApp extends StatelessWidget {
     ],
   );
 }
-
-
-
-// import 'package:adstacks/app/modules/auth/home/home_screen.dart';
-// import 'package:flutter/material.dart';
-
-// void main() {
-//   runApp(const MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'AdStacks',
-//       theme: ThemeData(
-        
-//         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-//         useMaterial3: true,
-//       ),
-//       home: HomeScreen(),
-//     );
-//   }
-// }
